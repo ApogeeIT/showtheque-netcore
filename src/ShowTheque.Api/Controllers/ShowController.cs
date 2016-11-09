@@ -6,7 +6,7 @@ using ShowTheque.Business.Models;
 namespace ShowTheque.Api.Controllers
 {
     [Route("api/[controller]")]
-    public class ShowController : Controller
+    public class ShowController
     {
         private IShowRepository _repo;
 
