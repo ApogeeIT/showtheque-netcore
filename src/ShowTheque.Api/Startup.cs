@@ -5,9 +5,11 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using ShowTheque.Business;
+using ShowTheque.DataEf;
 
 namespace ShowTheque.Api
 {
@@ -18,6 +20,13 @@ namespace ShowTheque.Api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddSingleton<IShowRepository, ShowRepository>();
+
+            services.AddDbContext<ShowDbContext>(options =>
+            {
+                options.UseNpgsql(
+                    "User ID=show;Host=localhost;Port=15101;Database=show;Password=show;Pooling=true;", 
+                    b => b.MigrationsAssembly("ShowTheque.Api"));
+            });
 
             services.AddMvc();
         }
