@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Metadata;
 
-namespace ShowTheque.Api.Migrations
+namespace ShowTheque.DataEf.Migrations
 {
     public partial class init : Migration
     {

@@ -24,8 +24,7 @@ namespace ShowTheque.Api
             services.AddDbContext<ShowDbContext>(options =>
             {
                 options.UseNpgsql(
-                    "User ID=show;Host=localhost;Port=15101;Database=show;Password=show;Pooling=true;", 
-                    b => b.MigrationsAssembly("ShowTheque.Api"));
+                    "User ID=show;Host=localhost;Port=15101;Database=show;Password=show;Pooling=true;");
             });
 
             services.AddMvc();

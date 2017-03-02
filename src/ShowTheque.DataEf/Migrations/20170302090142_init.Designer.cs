@@ -5,12 +5,13 @@ using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using ShowTheque.DataEf;
 
-namespace ShowTheque.Api.Migrations
+namespace ShowTheque.DataEf.Migrations
 {
     [DbContext(typeof(ShowDbContext))]
-    partial class ShowDbContextModelSnapshot : ModelSnapshot
+    [Migration("20170302090142_init")]
+    partial class init
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
             modelBuilder
                 .HasAnnotation("Npgsql:ValueGenerationStrategy", NpgsqlValueGenerationStrategy.SerialColumn)
