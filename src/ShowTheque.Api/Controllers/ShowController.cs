@@ -1,4 +1,6 @@
+using System;
 using System.Collections.Generic;
+using System.Linq;
 using Microsoft.AspNetCore.Mvc;
 using ShowTheque.Business;
 using ShowTheque.Business.Models;
@@ -28,7 +30,7 @@ namespace ShowTheque.Api.Controllers
         }
 
         [HttpPost]
-        public void Post([FromBody]Show show)
+        public void Post([FromBody] Show show)
         {
             _repo.AddShow(show);
         }

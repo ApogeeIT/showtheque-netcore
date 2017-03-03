@@ -21,7 +21,8 @@ namespace ShowTheque.Api
                 .UseConfiguration(config)
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseIISIntegration()
+                //.UseIISIntegration()
+                .UseUrls("http://localhost:5001")
                 .UseStartup<Startup>()
                 .Build();
 
